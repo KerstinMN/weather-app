@@ -1,0 +1,75 @@
+h1 {
+  color: #f0e5cf;
+  text-align: center;
+}
+h4 {
+  font-weight: 400;
+}
+#city-input {
+  border: 1px solid #c8c6c6;
+}
+
+#search-button,
+#current-location-button {
+  color: #4b6587;
+  background-color: #c8c6c6;
+  border: 1px solid #c8c6c6;
+}
+
+.weather-app {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  border: 1px solid #c8c6c6;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+#city,
+#current-date,
+#description,
+#temperature {
+  font-size: 24px;
+  color: #c8c6c6;
+}
+
+#additional-information {
+  margin-top: 10px;
+  text-align: left;
+  color: #c8c6c6;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1;
+}
+.units {
+  color: #09203f;
+}
+
+.weekdays {
+  text-align: center;
+  color: #c8c6c6;
+  font-size: 18px;
+}
+.card-title,
+.card-body {
+  color: #09203f;
+  text-align: center;
+}
+.card {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #c8c6c6;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+}

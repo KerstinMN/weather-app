@@ -73,3 +73,8 @@ a:hover {
   text-align: center;
   font-size: 14px;
 }
+
+.active {
+  color: #c8c6c6;
+  cursor: default;
+}

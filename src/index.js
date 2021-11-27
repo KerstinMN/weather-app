@@ -99,4 +99,35 @@ function getCurrentLocationPosition(event) {
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("click", getCurrentLocationPosition);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class ="row">`;
+  let daysForecast = ["Mo", "Tue", "Wed", "Thu"];
+  daysForecast.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+ 
+   <div class="col-3">
+     <div class="weekdays">${day}</div>
+     <div class="card">
+       ☀
+       <div class="card-body">
+         <h5 class="card-title">Sunny</h5>
+         <p class="card-text">
+           <span class="weather-forecast-max"> 18° </span> Max
+           <br />
+           <span class="weather-forecast-min">12°</span> Min
+         </p>
+       </div>
+     </div>
+   </div>
+ `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 searchCity("New York");
+displayForecast();

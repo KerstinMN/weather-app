@@ -51,8 +51,9 @@ h4 {
   font-size: 18px;
 }
 .card-title,
-.card-body {
-  color: #09203f;
+.card-body,
+.weather-forecast {
+  color: #c8c6c6;
   text-align: center;
 }
 .card {

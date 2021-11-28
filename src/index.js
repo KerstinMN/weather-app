@@ -137,7 +137,7 @@ function displayForecast(response) {
      alt=""
      />
        <div class="card-body">
-         <h5 class="card-title">Sunny</h5>
+         <h5 class="card-title">${forecastDay.weather[0].main}</h5>
          <p class="card-text">
            <span class="weather-forecast-max"> ${Math.round(
              forecastDay.temp.max

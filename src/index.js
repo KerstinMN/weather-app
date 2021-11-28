@@ -14,6 +14,13 @@ document.querySelector(
   "#current-date"
 ).innerHTML = `${day}, ${date}, ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "d78e071d9d2a90c9a4f0918bd303e097";
@@ -110,31 +117,41 @@ let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("click", getCurrentLocationPosition);
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class ="row">`;
-  let daysForecast = ["Mo", "Tue", "Wed", "Thu"];
-  daysForecast.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
  
    <div class="col-3">
-     <div class="weekdays">${day}</div>
+     <div class="weekdays">${formatDay(forecastDay.dt)}</div>
      <div class="card">
-       ☀
+     <img
+     src="http://openweathermap.org/img/wn/${
+       forecastDay.weather[0].icon
+     }@2x.png"
+     alt=""
+     />
        <div class="card-body">
          <h5 class="card-title">Sunny</h5>
          <p class="card-text">
-           <span class="weather-forecast-max"> 18° </span> Max
+           <span class="weather-forecast-max"> ${Math.round(
+             forecastDay.temp.max
+           )}°</span > Max
            <br />
-           <span class="weather-forecast-min">12°</span> Min
+           <span class="weather-forecast-min">${Math.round(
+             forecastDay.temp.min
+           )}°</span> Min
          </p>
        </div>
      </div>
    </div>
  `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;

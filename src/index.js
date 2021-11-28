@@ -1,6 +1,14 @@
 let now = new Date();
 let date = now.getDate();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let day = days[now.getDay()];
 let hours = now.getHours();
 if (hours < 10) {
@@ -12,12 +20,20 @@ if (minutes < 10) {
 }
 document.querySelector(
   "#current-date"
-).innerHTML = `${day}, ${date}, ${hours}:${minutes}`;
+).innerHTML = `Last updated: ${day}, ${date}, 
+${hours}:${minutes}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursay",
+    "Friday",
+    "Saturday",
+  ];
   return days[day];
 }
 
@@ -115,11 +131,11 @@ function displayForecast(response) {
          <p class="card-text">
            <span class="weather-forecast-max"> ${Math.round(
              forecastDay.temp.max
-           )}°</span > Max
+           )}°C</span > max
            <br />
            <span class="weather-forecast-min">${Math.round(
              forecastDay.temp.min
-           )}°</span> Min
+           )}°C</span> min
          </p>
        </div>
      </div>

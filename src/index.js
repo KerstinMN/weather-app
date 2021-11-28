@@ -30,7 +30,7 @@ function formatDay(timestamp) {
     "Monday",
     "Tuesday",
     "Wednesday",
-    "Thursay",
+    "Thursday",
     "Friday",
     "Saturday",
   ];
@@ -120,11 +120,12 @@ function displayForecast(response) {
    <div class="col-3">
      <div class="weekdays">${formatDay(forecastDay.dt)}</div>
      <div class="card">
-     <img
+     <img class = "iconForecast"
      src="http://openweathermap.org/img/wn/${
        forecastDay.weather[0].icon
      }@2x.png"
      alt=""
+    
      />
        <div class="card-body">
          <h5 class="card-title">${forecastDay.weather[0].main}</h5>

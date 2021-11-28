@@ -79,6 +79,10 @@ a:hover {
   color: #c8c6c6;
   cursor: default;
 }
-.balken {
-  color: #c8c6c6;
+
+.iconForecast {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 60;
 }

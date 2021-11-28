@@ -50,16 +50,16 @@ h4 {
   color: #c8c6c6;
   font-size: 18px;
 }
-.card-title,
-.card-body,
+
 .weather-forecast {
-  color: #c8c6c6;
+  color: #09203f;
   text-align: center;
+  margin-top: 0;
 }
 .card {
   text-align: center;
-  margin-top: 10px;
   padding: 10px;
+  background-color: #f0e5cf;
 }
 
 a {
